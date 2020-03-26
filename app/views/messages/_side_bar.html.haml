@@ -1,1 +1,22 @@
-<サイドバー>
+.side-bar
+  .side-bar__user-name
+    .side-bar__user-name__top-items
+      .side-bar__user-name__top-items__name
+        ジュン
+      .side-bar__user-name__top-items__icons
+        = link_to "#", class: "side-bar__user-name__top-items__icons__add-group" do
+          = icon('fas', 'edit')
+        = link_to "#", class: "side-bar__user-name__top-items__icons__edit" do
+          = icon('fas', 'cog')
+    
+  .side-bar__group-list
+    .side-bar__group-list__group
+      .side-bar__group-list__group__name
+        ="# techcamp"
+      .side-bar__group-list__group__message
+        LGTMもらえますように！
+
+      .side-bar__group-list__group__name
+        ="# expert_73_weekend"
+      .side-bar__group-list__group__message
+        まだメッセージがありません
