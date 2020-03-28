@@ -2,11 +2,11 @@
   .side-bar__user-name
     .side-bar__user-name__top-items
       .side-bar__user-name__top-items__name
-        ジュン
+        = current_user.name
       .side-bar__user-name__top-items__icons
         = link_to "#", class: "side-bar__user-name__top-items__icons__add-group" do
           = icon('fas', 'edit')
-        = link_to "#", class: "side-bar__user-name__top-items__icons__edit" do
+        = link_to edit_user_path(current_user), class: "side-bar__user-name__top-items__icons__edit" do
           = icon('fas', 'cog')
     
   .side-bar__group-list
