@@ -2,10 +2,12 @@
   .main-chat__group-info
     .main-chat__group-info__names
       .main-chat__group-info__names__group-name
-        ="# techcamp"
+        =@group.name
       .main-chat__group-info__names__member-names
-        Member：ジュン
-    = link_to "#", class: "main-chat__group-info__edit-button" do
+        Member：
+        - @group.users.each do |user|
+          = "#{user.name} "
+    = link_to edit_group_path(@group), class: "main-chat__group-info__edit-button" do
       = "Edit"
   .main-chat__message-list
     = render @messages
