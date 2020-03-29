@@ -50,8 +50,20 @@
         LGTMもらえますように！
   .main-chat__message-form
     .main-chat__message-form__window
-      %input{type: :text, class: "main-chat__message-form__window__left", placeholder: "type a message"}
-      %label{class: "main-chat__message-form__window__right"}
-        = icon('fas', 'image')
-        %input{type: :file,class:"main-chat__message-form__window__right--none"}
-    %input{type: :submit, value: "Send", class: "main-chat__message-form__send-button"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: "main-chat__message-form__window__message", placeholder: "type a message"
+        .main-chat__message-form__window__mask
+          = f.label :image, class: "main-chat__message-form__window__mask__image" do
+            = icon('fas', 'image', class: 'main-chat__message-form__window__mask__image--icon')
+            = f.file_field :image, class: 'main-chat__message-form__window__mask__image--hidden'
+        = f.submit 'Send', class: "main-chat__message-form__window__submit"
+
+
+
+
+
+
+
+
+
+
