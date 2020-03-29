@@ -2,56 +2,31 @@
   .main-chat__group-info
     .main-chat__group-info__names
       .main-chat__group-info__names__group-name
-        ="# techcamp"
+        =@group.name
       .main-chat__group-info__names__member-names
-        Member：ジュン
-    = link_to "#", class: "main-chat__group-info__edit-button" do
+        Member：
+        - @group.users.each do |user|
+          = "#{user.name} "
+    = link_to edit_group_path(@group), class: "main-chat__group-info__edit-button" do
       = "Edit"
   .main-chat__message-list
-    .main-chat__message-list__message
-      .main-chat__message-list__message__user-info
-        .main-chat__message-list__message__user-info__name
-          ジュン
-        .main-chat__message-list__message__user-info__time
-          2020/03/26(Thu) 18:00:01
-      .main-chat__message-list__message__post-text
-        calc関数でハマった
-    .main-chat__message-list__message
-      .main-chat__message-list__message__user-info
-        .main-chat__message-list__message__user-info__name
-          ジュン
-        .main-chat__message-list__message__user-info__time
-          2020/03/26(Thu) 19:05:02
-      .main-chat__message-list__message__post-text
-        hamlでフォームの部品を表示するのに苦戦した
-    .main-chat__message-list__message
-      .main-chat__message-list__message__user-info
-        .main-chat__message-list__message__user-info__name
-          ジュン
-        .main-chat__message-list__message__user-info__time
-          2020/03/26(Thu) 20:10:03
-      .main-chat__message-list__message__post-text
-        ファイルを開くボタンをアイコンに割り当てるのに苦戦した
-    .main-chat__message-list__message
-      .main-chat__message-list__message__user-info
-        .main-chat__message-list__message__user-info__name
-          ジュン
-        .main-chat__message-list__message__user-info__time
-          2020/03/26(Thu) 21:15:04
-      .main-chat__message-list__message__post-text
-        入力フォームにアイコンを重ねるのに苦戦した
-    .main-chat__message-list__message
-      .main-chat__message-list__message__user-info
-        .main-chat__message-list__message__user-info__name
-          ジュン
-        .main-chat__message-list__message__user-info__time
-          2020/03/26(Thu) 22:20:05
-      .main-chat__message-list__message__post-text
-        LGTMもらえますように！
+    = render @messages
   .main-chat__message-form
     .main-chat__message-form__window
-      %input{type: :text, class: "main-chat__message-form__window__left", placeholder: "type a message"}
-      %label{class: "main-chat__message-form__window__right"}
-        = icon('fas', 'image')
-        %input{type: :file,class:"main-chat__message-form__window__right--none"}
-    %input{type: :submit, value: "Send", class: "main-chat__message-form__send-button"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: "main-chat__message-form__window__message", placeholder: "type a message"
+        .main-chat__message-form__window__mask
+          = f.label :image, class: "main-chat__message-form__window__mask__image" do
+            = icon('fas', 'image', class: 'main-chat__message-form__window__mask__image--icon')
+            = f.file_field :image, class: 'main-chat__message-form__window__mask__image--hidden'
+        = f.submit 'Send', class: "main-chat__message-form__window__submit"
+
+
+
+
+
+
+
+
+
+

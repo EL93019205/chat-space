@@ -8,12 +8,13 @@
           = icon('fas', 'edit')
         = link_to edit_user_path(current_user), class: "side-bar__user-name__top-items__icons__edit" do
           = icon('fas', 'cog')
-    
+  
   .side-bar__group-list
     - current_user.groups.each do |group|
       .side-bar__group-list__group
-        = link_to '#' do
+        = link_to group_messages_path(group) do
           .side-bar__group-list__group__name
             = group.name
-        .side-bar__group-list__group__message
-          LGTMもらえますように！
+          .side-bar__group-list__group__message
+            = group.show_last_message
+
