@@ -48,6 +48,8 @@ describe MessagesController do
           expect{ subject }.to change(Message, :count).by(1)
         end
         it 'group_messages_pathへリダイレクトすること' do
+          subject
+          expect(response).to redirect_to(group_messages_path(group))
         end
       end
 
