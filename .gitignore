@@ -18,5 +18,6 @@
 
 # 画像がGithubにコミットされないようにする
 public/uploads/*
+public/images/*
 
 .DS_Store
