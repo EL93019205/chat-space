@@ -65,6 +65,8 @@ describe MessagesController do
           expect{ subject }.not_to change(Message, :count)
         end
         it 'index.html.hamlに遷移すること' do
+          subject
+          expect(response).to render_template :index
         end
       end
     end
