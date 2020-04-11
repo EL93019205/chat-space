@@ -62,6 +62,7 @@ describe MessagesController do
         }
 
         it 'messageを保存しないこと' do
+          expect{ subject }.not_to change(Message, :count)
         end
         it 'index.html.hamlに遷移すること' do
         end
