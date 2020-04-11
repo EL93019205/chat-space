@@ -73,6 +73,8 @@ describe MessagesController do
 
     context 'ログインしていない場合' do
       it 'new_user_session_pathにリダイレクトすること' do
+        post :create, params: params
+        expect(response).to redirect_to(new_user_session_path)
       end
     end
   end
