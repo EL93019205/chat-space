@@ -3,7 +3,7 @@ require 'rails_helper'
 describe MessagesController do
   let(:group) { create(:group) }
   let(:user) { create(:user) }
-  describe '#create' do
+  describe '#index' do
     context 'ログインしている場合' do
       before do
         login user
