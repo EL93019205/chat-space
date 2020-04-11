@@ -34,13 +34,23 @@ describe MessagesController do
   describe '#create' do
     context 'ログインしている場合' do
       context '保存に成功した場合' do
+        it 'messageを保存すること' do
+        end
+        it 'group_messages_pathへリダイレクトすること' do
+        end
       end
 
       context '保存に失敗した場合' do
+        it 'messageを保存しないこと' do
+        end
+        it 'index.html.hamlに遷移すること' do
+        end
       end
     end
 
     context 'ログインしていない場合' do
+      it 'new_user_session_pathにリダイレクトすること' do
+      end
     end
   end
 end
