@@ -45,6 +45,7 @@ describe MessagesController do
           params: params
         }
         it 'messageを保存すること' do
+          expect{ subject }.to change(Message, :count).by(1)
         end
         it 'group_messages_pathへリダイレクトすること' do
         end
