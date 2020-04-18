@@ -12,5 +12,9 @@ $(function(){
       processData: false,
       contentType: false
     })
+    .done(function(data){
+    })
+    .fail(function(){
+    })
   });
 });
