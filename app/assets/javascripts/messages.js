@@ -37,6 +37,8 @@ $(function(){
       var html = buildHTML(data);
       $('.main-chat__message-list').append(html);
       $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
+      $('.main-chat__message-form__window__message').val('');
+      $('.main-chat__message-form__window__mask__image--hidden').val('');
     })
     .fail(function(){
     })
