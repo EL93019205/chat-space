@@ -32,6 +32,7 @@ $(function(){
 
       }
       else if(input.length == 0){
+        return false;
       }
       else{
         appendErrMsgToHTML("ユーザーが見つかりません");
