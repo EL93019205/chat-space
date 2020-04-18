@@ -41,6 +41,7 @@ $(function(){
       $('.main-chat__message-form__window__mask__image--hidden').val('');
     })
     .fail(function(){
+      alert("メッセージ送信に失敗しました");
     })
   });
 });
