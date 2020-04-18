@@ -7,5 +7,9 @@ $(function(){
       data: { keyword: input},
       dataType: "json"
     })
+    .done(function(users){
+    })
+    .fail(function(){
+    });
   })
 });
