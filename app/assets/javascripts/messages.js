@@ -63,6 +63,7 @@ $(function(){
       $('.main-chat__message-list').append(insertHTML);
     })
     .fail(function(){
+      alert('error');
     });
   };
 });
