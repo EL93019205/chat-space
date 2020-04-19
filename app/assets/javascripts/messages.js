@@ -46,4 +46,18 @@ $(function(){
       $('.main-chat__message-form__window__submit').prop('disabled',false);
     })
   });
+
+  var reloadMessages = function() {
+    var last_message_id = $('.main-chat__message-list__message:last').data("message-id");
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages){
+    })
+    .fail(function(){
+    });
+  };
 });
