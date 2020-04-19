@@ -61,6 +61,8 @@ $(function(){
         insertHTML += buildHTML(message);
       });
       $('.main-chat__message-list').append(insertHTML);
+      if( messages.length !== 0 ){
+      }
     })
     .fail(function(){
       alert('error');
