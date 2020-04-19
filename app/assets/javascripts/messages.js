@@ -4,7 +4,7 @@ $(function(){
     if( message.image ){
       img_src = `<img src=${message.image}>`;
     }
-    var html = `<div class="main-chat__message-list__message data-message-id=${message.id}">
+    var html = `<div class="main-chat__message-list__message" data-message-id=${message.id}>
                   <div class="main-chat__message-list__message__user-info">
                     <div class="main-chat__message-list__message__user-info__name">
                       ${message.user_name}
